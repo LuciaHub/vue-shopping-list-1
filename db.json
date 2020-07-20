@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Tomates",
+      "ammount": 5,
+      "bought": true
+    },
+    {
+      "id": 2,
+      "name": "Queso",
+      "ammount": 1,
+      "bought": false
+    }
+  ]
+}
