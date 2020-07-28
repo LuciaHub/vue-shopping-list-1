@@ -1,41 +1,49 @@
 <template>
-  <div>
-    <h2>List</h2>
-    <ul class="list">
-      <li v-for="item in items" :key="item.id">
-        <Product :product="item"></Product>
+  <section role="contentinfo" :title="title" :aria-label="title">
+    <v-alert type="error" v-if="errorGettingItems">
+      Items could not be retrieved, try again later.
+    </v-alert>
+    <ul v-else-if="items.length" class="list">
+      <li class="list__item" v-for="item in items" :key="item.id">
+        <Product :product="item"/>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
-import Product from './Product';
+import { mapActions, mapState } from "vuex";
 import { ACTION_TYPES } from "../../store/actions";
-import { httpService } from "../../http";
+import { itemsService } from "../../services/items-service";
+import Product from './Product';
 export default {
   name: "List",
-  components: {
+  components:{
     Product
   },
+  data(){
+    return {
+      title: 'Items list'
+    }
+  },
   computed: {
-    ...mapState(["items"])
+    ...mapState(['items', 'errorGettingItems'])
   },
   methods: {
     ...mapActions({
-      getItems: ACTION_TYPES.GET_ITEMS
-    })
+      getItems: ACTION_TYPES.GET_ITEMS,
+    }),
   },
-  mounted() {
-    this.getItems(httpService);
-  }
+  created() {
+    this.getItems(itemsService);
+  },
 };
 </script>
 <style scoped>
   .list {
+    list-style: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
     gap: 1rem;
   }
 </style>

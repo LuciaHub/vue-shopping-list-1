@@ -8,7 +8,7 @@ Vue.use(Vuetify);
 export default new Vuetify({
     theme: {
         options: {
-            customProperties: false,
+            customProperties: true,
         },
         themes: {
             light: {

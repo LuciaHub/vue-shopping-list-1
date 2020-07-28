@@ -7,12 +7,12 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "mock": "json-server -w -p 3005 db.json",
-    "start": "run-p mock serve",
-    "test": "jest --watchAll"
+    "start": "run-p mock serve"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "debounce": "^1.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
     "vuetify": "^2.2.11",

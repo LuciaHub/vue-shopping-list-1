@@ -1,3 +1,5 @@
 export const state = {
-    items: []
+    items: [],
+    errorGettingItems: false,
+    requests: 0
 };

@@ -10,7 +10,47 @@
       "id": 2,
       "name": "Queso",
       "ammount": 1,
-      "bought": false
+      "bought": true
+    },
+    {
+      "name": "p",
+      "ammount": 1,
+      "id": 3
+    },
+    {
+      "name": "bar",
+      "ammount": 1,
+      "id": 4
+    },
+    {
+      "name": "afdsf",
+      "ammount": "1",
+      "id": 5
+    },
+    {
+      "name": "asfasf",
+      "ammount": "1",
+      "id": 6
+    },
+    {
+      "name": "fdasgdg",
+      "ammount": 1,
+      "id": 7
+    },
+    {
+      "name": "adad",
+      "ammount": 1,
+      "id": 8
+    },
+    {
+      "name": "jfhfh",
+      "ammount": 1,
+      "id": 9
+    },
+    {
+      "name": "derftgyuhj",
+      "ammount": 1,
+      "id": 10
     }
   ]
 }

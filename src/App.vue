@@ -1,16 +1,31 @@
 <template>
   <v-app>
-    <h1>Hello</h1>
-     <router-link to="/">Lista</router-link>
-     <router-link to="/add">Add</router-link>
+    <Menu />
+    <Header />
     <v-main>
-      <router-view></router-view>
+      <Loader />
+      <div class="app__content">
+        <router-view></router-view>
+      </div>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import Menu from "./components/Menu";
+import Header from "./components/Header";
+import Loader from "./components/Loader";
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    Menu,
+    Header,
+    Loader,
+  },
 };
 </script>
+<style scoped>
+.app__content {
+  padding: 1rem;
+}
+</style>
